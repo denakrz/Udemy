@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Valoraciones2
 {
-    class LibroValoraciones
+    public class LibroValoraciones // internal: accesible para todas las clses dentro de este proyecto
     {
         List<float> valoraciones;
 
