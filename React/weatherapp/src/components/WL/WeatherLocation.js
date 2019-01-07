@@ -1,7 +1,8 @@
 import React, { Component } from 'react'; // importo toda la libreria
+import convert from 'convert-units';
 import Location from './Location'; // importo componente
 import WeatherData from './Data/WeatherData';
-import {SUN} from '../constants/weathers';
+import {SUN, CLOUDY} from '../constants/weathers';
 import './styleLoc.css';
 
 const location = 'Buenos Aires,ar';
@@ -25,13 +26,37 @@ class WeatherLocation extends Component {
         };
     }
 
+    getTemp = kelvin => {
+        return convert(kelvin).from('K').to('C').toFixed(2);
+    }
+
+    getWeatherState = (weather) => {
+        return CLOUDY;
+    }
+
+    getData= (weather_data) => {
+        const { humidity, temp } = weather_data.main; // se obtiene de la estructura JSON
+        const { speed } = weather_data.wind;
+        const weatherState = this.getWeatherState(this.weather);
+        const temperature = this.getTemp(temp);
+        const data = {
+            humidity, 
+            temperature: this.getTemp(temp),
+            weatherState,
+            wind: `${speed}m/s`,
+        }
+
+        return data;
+    }
+
     handleUpdateClick  = () => {
         fetch(api_weather).then( data => {
             console.log(data);
             return data.json(); // obtengo el valor del retorno
     }).then( weather_data => {
+        const data = this.getData(weather_data);
+        this.setState({ data });
         console.log(weather_data);
-        debugger;
     }); // para pegarle a la APi
     }
 
