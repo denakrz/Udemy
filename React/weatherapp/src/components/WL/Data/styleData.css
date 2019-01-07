@@ -1,0 +1,59 @@
+.weatherDataCont {
+    background: rgba(200,200,200, 0.5);
+    width: 430px;
+    line-height: 100px; /* al tomarse como linea ocupa todo el alto */
+    border-radius: 5px;
+    margin: 5px 15px;
+    margin-top: 15px;
+}
+
+.weatherExtraInfoCont {
+    width: 40%;
+    display: inline-block;
+    line-height: 28px;
+    text-align: left;
+    padding-top: 5px;
+
+}
+
+.extraInfoText {
+    display: block;
+    color: #216ad8;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.weatherTemperatureCont {
+    width: 60%;
+    display: inline-block;
+}
+
+.temperature {
+    font-size: 35px;
+    font-weight: bold;
+    padding-left: 20px;
+    color: #333;
+}
+
+.temperatureType {
+    font-weight: bold;
+    color: #000000;
+}
+
+.wicon {
+    color: rgb(255, 136, 0);
+    margin-top: 2%;
+}
+
+
+
+
+/* TEORIA */
+
+/* Pre-procesadores de CSS
+* SASS: extiende caracteristicas de CSS.
+* LESS:
+* CSS MODULES: del lado de React, al momento de importar se le atribuye un nombre de "namespace", esto nos ayuda en la definición de componentes.
+* se usa por medio de web-pack.
+* Facebook no la incorporó por la dependencia que tiene con web-pack.
+*/
