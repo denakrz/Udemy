@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import WeatherTeperature from './WeatherTemperature';
 import WeatherExtraInfo from './WeatherExtraInfo';
-import {SNOW} from '../../constants/weathers';
 
 import './styleData.css';
 

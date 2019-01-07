@@ -4,18 +4,15 @@ import WeatherData from './Data/WeatherData';
 import {SUN} from '../constants/weathers';
 import './styleLoc.css';
 
+const location = 'Buenos Aires,ar';
+const api_key = '8869135e9f8c76358c0e415c4c1cee83';
+const api_weather = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;  // con tilde invertida taradaaaaaa
+
 const data1 = {
     temperature: 20,
     weatherState: SUN,
     humidity: 10,
     wind: '10m/s',
-};
-
-const data2 = {
-    temperature: 15,
-    weatherState: SUN,
-    humidity: 15,
-    wind: '5m/s',
 };
 
 class WeatherLocation extends Component { 
@@ -27,13 +24,17 @@ class WeatherLocation extends Component {
             data: data1
         };
     }
+
     handleUpdateClick  = () => {
-        this.setState({
-            city: 'Buenos Aires',
-            data: data2 
-        })
-        console.log('actualizado');
+        fetch(api_weather).then( data => {
+            console.log(data);
+            return data.json(); // obtengo el valor del retorno
+    }).then( weather_data => {
+        console.log(weather_data);
+        debugger;
+    }); // para pegarle a la APi
     }
+
     render = () => { // función estilo ecmascript 2015
         const {city, data} = this.state;
         return(
