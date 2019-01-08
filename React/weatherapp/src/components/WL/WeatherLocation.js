@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; // importo toda la libreria
+import CircularProgress from 'material-ui/CircularProgress';
 import convert from 'convert-units';
 import Location from './Location'; // importo componente
 import WeatherData from './Data/WeatherData';
@@ -9,13 +10,6 @@ const location = 'Buenos Aires,ar';
 const api_key = '8869135e9f8c76358c0e415c4c1cee83';
 const api_weather = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;  // con tilde invertida taradaaaaaa
 
-const data1 = {
-    temperature: 0,
-    weatherState: SUN,
-    humidity: 0,
-    wind: '0',
-};
-
 class WeatherLocation extends Component { 
     
     constructor() {
@@ -23,7 +17,7 @@ class WeatherLocation extends Component {
         super();
         this.state = {
             city: 'Buenos Aires',
-            data: data1
+            data: null
         };
     }
 
@@ -88,15 +82,15 @@ class WeatherLocation extends Component {
         console.log('render');
 
         const {city, data} = this.state;
-        return(
+        return (
             <div className='weatherLocationCont'> 
                 <Location city={city} />
-                <WeatherData data={data} /> 
-                <button onClick={this.handleUpdateClick}> Actualizar </button>
-            </div>
-        )
+                {data ? <WeatherData data={data} /> :
+                    <CircularProgress size= {60} thickness = {4} />}     
+            </div>);
+
     }; // debería aparecer Buenos aires + data // función que devuelve un div
-};
+}
 
 /* Lifecycle: 
 * constructor
