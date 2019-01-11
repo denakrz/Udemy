@@ -9,9 +9,24 @@ namespace Valoraciones2
 {
     public class LibroValoraciones // internal: accesible para todas las clses dentro de este proyecto
     {
-        public string Nombre; // para testear que cada vez que cree un libro le pongo un nombre
+        private string _nombre;
+        public string Nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+            set
+            {
+                if (!String.IsNullOrEmpty(value)) // si el string no es null o vacío
+                {
+                    _nombre = value; // asignalo a nombre
+                }
+            }
+        }
+
         public IdiomaLibro Idioma;
-        List<float> valoraciones;
+        private List<float> valoraciones;
 
         public LibroValoraciones()
         {
