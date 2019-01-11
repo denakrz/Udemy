@@ -10,13 +10,13 @@ namespace Valoraciones2
     {
         public CalcularValoraciones()
         {
-            valoracionMin = float.MaxValue;
+            ValoracionMin = float.MaxValue;
         }
 
-        public float valoracionMax;
+        public float ValoracionMax;
 
-        public float valoracionMin;
+        public float ValoracionMin;
 
-        public float promedioValoraciones;
+        public float PromedioValoraciones;
     }
 }

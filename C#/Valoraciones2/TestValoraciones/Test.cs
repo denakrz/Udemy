@@ -9,7 +9,7 @@ using Valoraciones2;
 namespace TestValoraciones
 {
     [TestClass]
-    public class ValoracionesTest // debe ser público para poder acceder
+    public class Test // debe ser público para poder acceder
     {
         [TestMethod]
         public void CalcularValoracionMax()
@@ -22,7 +22,7 @@ namespace TestValoraciones
 
             CalcularValoraciones resultado = libro.PublicarValoraciones();
 
-            Assert.AreEqual(5, resultado.valoracionMax);
+            Assert.AreEqual(5, resultado.ValoracionMax);
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace TestValoraciones
 
             CalcularValoraciones resultado = libro.PublicarValoraciones();
 
-            Assert.AreEqual(1.2f, resultado.valoracionMin);
+            Assert.AreEqual(1.2f, resultado.ValoracionMin);
         }
 
         [TestMethod]
@@ -50,8 +50,7 @@ namespace TestValoraciones
 
             CalcularValoraciones resultado = libro.PublicarValoraciones();
 
-            Assert.AreEqual(3.65f, resultado.promedioValoraciones,0.01);
+            Assert.AreEqual(3.65f, resultado.PromedioValoraciones,0.01);
         }
-
     }
 }

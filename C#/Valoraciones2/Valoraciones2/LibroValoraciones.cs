@@ -9,6 +9,8 @@ namespace Valoraciones2
 {
     public class LibroValoraciones // internal: accesible para todas las clses dentro de este proyecto
     {
+        public string Nombre; // para testear que cada vez que cree un libro le pongo un nombre
+        public IdiomaLibro Idioma;
         List<float> valoraciones;
 
         public LibroValoraciones()
@@ -22,12 +24,12 @@ namespace Valoraciones2
             float sumaValoraciones = 0; // lo establezco en cero
             foreach (float valoracion in valoraciones) // recorro la lista de valoraciones
             {
-                calculo.valoracionMin = Math.Min(valoracion, calculo.valoracionMin); // recorro lista y me quedo con la valoracion minima
-                calculo.valoracionMax = Math.Max(valoracion, calculo.valoracionMax);
+                calculo.ValoracionMin = Math.Min(valoracion, calculo.ValoracionMin); // recorro lista y me quedo con la valoracion minima
+                calculo.ValoracionMax = Math.Max(valoracion, calculo.ValoracionMax);
                 sumaValoraciones += valoracion; // suma de valoraciones(0) + cantidad de valoraciones en lista = sumaValoraciones
             }
 
-            calculo.promedioValoraciones = sumaValoraciones / valoraciones.Count; // suma dividido cantidad de valoraciones
+            calculo.PromedioValoraciones = sumaValoraciones / valoraciones.Count; // suma dividido cantidad de valoraciones
             return calculo;
         }
         public void AgregarValoracion(float valoracion) // debe ser public para poder acceder desde program

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'; // importo toda la libreria
+import React, { Component, PropTypes } from 'react'; // importo toda la libreria
 import CircularProgress from 'material-ui/CircularProgress';
 import convert from 'convert-units';
 import Location from './Location'; // importo componente
@@ -6,17 +6,17 @@ import WeatherData from './Data/WeatherData';
 import {SUN} from '../constants/weathers';
 import './styleLoc.css';
 
-const location = 'Buenos Aires,ar';
+
 const api_key = '8869135e9f8c76358c0e415c4c1cee83';
-const api_weather = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;  // con tilde invertida taradaaaaaa
+const url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;  // con tilde invertida taradaaaaaa
 
 class WeatherLocation extends Component { 
     
-    constructor() {
+    constructor({ city }) {
         console.log('constructor');
         super();
         this.state = {
-            city: 'Buenos Aires',
+            city,
             data: null
         };
     }
@@ -45,19 +45,21 @@ class WeatherLocation extends Component {
     }
 
     handleUpdateClick  = () => {
-        fetch(api_weather).then( data => {
-            console.log(data);
-            return data.json(); // obtengo el valor del retorno
-    }).then( weather_data => {
-        const data = this.getData(weather_data);
-        this.setState({ data });
-        console.log(weather_data);
-    }); // para pegarle a la APi
+      
     }
 
     /* Se invoca una única vez inmediatamente después del constructor, previo a renderizarse */
     componentWillMount() {
-        this.handleUpdateClick(); // se obtiene los datos del clima apenas se inicia la aplicación.
+        const {city} = this.state;
+        const api_weather = `${url}?q-${this.state.city}&appid-${api_key}`;
+        fetch(api_weather).then( data => {
+            console.log(data);
+            return data.json(); // obtengo el valor del retorno
+        }).then( weather_data => {
+            const data = this.getData(weather_data);
+            this.setState({ data });
+            console.log(weather_data);
+        }); // para pegarle a la APi // se obtiene los datos del clima apenas se inicia la aplicación.
     }
 
     /* Invocado inmediatamente después de que un componente es insertado, si se requiere 
@@ -103,6 +105,9 @@ class WeatherLocation extends Component {
 * render
 * DidUpdate
 */
+WeatherLocation.propTypes = {
+    city: PropTypes.string
+}
 
 export default WeatherLocation; // para que se pueda ver desde afuera
 
