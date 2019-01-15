@@ -45,15 +45,21 @@ namespace Valoraciones2
             float valoracionMaxima = publicar.ValoracionMax;
             float promedioValoraciones = publicar.PromedioValoraciones;
 
-           // Console.WriteLine("Este es el resultado de las valoraciones");
-           // EscribirValoraciones("El promedio es: " , (int)promedioValoraciones); // 3,65 // 3
-           // EscribirValoraciones("El valor mínimo es: " , (int)valoracionMinima); // 1.2 // 1
+            // Console.WriteLine("Este es el resultado de las valoraciones");
+            // EscribirValoraciones("El promedio es: " , (int)promedioValoraciones); // 3,65 // 3
+            // EscribirValoraciones("El valor mínimo es: " , (int)valoracionMinima); // 1.2 // 1
             // EscribirValoraciones("El valor máximo es: " , (int)valoracionMaxima); // 5 // 5
 
-            SwitchCase misCasos = new SwitchCase();
-            misCasos.EjemploSwitchCase1();
-            misCasos.EjemploSwitchCase2();
-            misCasos.EjemploSwitchCase3();
+            // SwitchCase misCasos = new SwitchCase();
+            // misCasos.EjemploSwitchCase1();
+            //  misCasos.EjemploSwitchCase2();
+            // misCasos.EjemploSwitchCase3();
+
+            Bucles miBucle = new Bucles();
+           // miBucle.BuclesForEach();
+           // miBucle.BuclesForLoop();
+           // miBucle.BuclesWhile();
+            miBucle.BuclesDoWhile();
             
            // Condicionales condicionales = new Condicionales();
            // condicionales.ComprobacionesConRetorno();

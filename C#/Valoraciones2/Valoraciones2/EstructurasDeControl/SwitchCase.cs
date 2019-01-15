@@ -15,7 +15,7 @@ namespace Valoraciones2.EstructurasDeControl
             switch (caseSwitch)
             {
                 case 1:
-                    Console.WriteLine("Caso 1");
+                    Console.WriteLine("Caso 1"); // imprime este
                     break;
                 case 2:
                     Console.WriteLine("Caso 2");
@@ -47,7 +47,7 @@ namespace Valoraciones2.EstructurasDeControl
 
                 // se pueden saltar numeros de casos
                 case 7 - 4:
-                    Console.WriteLine("Case 3");
+                    Console.WriteLine("Case 3"); // imprime este
                     break;
 
                 // si el valor de switchExpression no es ni 0, 1, 2 o 3
@@ -86,7 +86,7 @@ namespace Valoraciones2.EstructurasDeControl
             }
             if (cost != 0)
             {
-                Console.WriteLine("El coste es de " + cost + " centavos");
+                Console.WriteLine("El costo es de " + cost + " centavos");
             }
             Console.WriteLine("Disfrute su café");
         }
