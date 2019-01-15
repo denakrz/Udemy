@@ -9,6 +9,15 @@ namespace Valoraciones2
 {
     public class LibroValoraciones // internal: accesible para todas las clses dentro de este proyecto
     {
+        private string _valoracionesLetras;
+        public string ValoracionesLetras
+        {
+            get
+            {
+                return _valoracionesLetras;
+            }
+        }
+
         private string _nombre;
         public string Nombre
         {
@@ -45,8 +54,35 @@ namespace Valoraciones2
             }
 
             calculo.PromedioValoraciones = sumaValoraciones / valoraciones.Count; // suma dividido cantidad de valoraciones
+            AsignarLetraVal(calculo.PromedioValoraciones);
             return calculo;
         }
+
+        private void AsignarLetraVal(float promedioValoraciones)
+        {
+            if (promedioValoraciones <= 5 && promedioValoraciones > 4)
+            {
+                _valoracionesLetras = "A";      
+            }
+            else if (promedioValoraciones <= 4 && promedioValoraciones > 3)
+            {
+                _valoracionesLetras = "B";
+            }
+            else if (promedioValoraciones <= 3 && promedioValoraciones > 2)
+            {
+                _valoracionesLetras = "C";
+            }
+            else if (promedioValoraciones <= 2 && promedioValoraciones > 1)
+            {
+                _valoracionesLetras = "D";
+            }
+            else
+            {
+                _valoracionesLetras = "E";
+            }
+            
+        }
+
         public void AgregarValoracion(float valoracion) // debe ser public para poder acceder desde program
         {
             // valoracion = valoracion + 5; al numero que entre le sumo 5

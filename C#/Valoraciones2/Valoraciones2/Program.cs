@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 //using System.Speech;
 using System.Speech.Synthesis;
+using Valoraciones2.EstructurasDeControl;
 
 namespace Valoraciones2
 {
@@ -17,7 +18,7 @@ namespace Valoraciones2
             libro.Idioma = IdiomaLibro.ES; // Asigno idioma con enum, clase IdiomaLibro
             libro.Nombre = "Valoraciones";
             libro.Nombre = ""; // no lo muestra porque es null
-            Console.WriteLine(libro.Nombre);
+          //  Console.WriteLine(libro.Nombre);
 
             // SpeechSynthesizer hablar = new SpeechSynthesizer();
             
@@ -44,12 +45,28 @@ namespace Valoraciones2
             float valoracionMaxima = publicar.ValoracionMax;
             float promedioValoraciones = publicar.PromedioValoraciones;
 
-            Console.WriteLine("Este es el resultado de las valoraciones");
-            EscribirValoraciones("El promedio es: " , (int)promedioValoraciones); // 3,65 // 3
-            EscribirValoraciones("El valor mínimo es: " , (int)valoracionMinima); // 1.2
-            EscribirValoraciones("El valor máximo es: " , (int)valoracionMaxima); // 5
-           
-            Console.ReadLine(); 
+           // Console.WriteLine("Este es el resultado de las valoraciones");
+           // EscribirValoraciones("El promedio es: " , (int)promedioValoraciones); // 3,65 // 3
+           // EscribirValoraciones("El valor mínimo es: " , (int)valoracionMinima); // 1.2 // 1
+            // EscribirValoraciones("El valor máximo es: " , (int)valoracionMaxima); // 5 // 5
+
+            SwitchCase misCasos = new SwitchCase();
+            misCasos.EjemploSwitchCase1();
+            misCasos.EjemploSwitchCase2();
+            misCasos.EjemploSwitchCase3();
+            
+           // Condicionales condicionales = new Condicionales();
+           // condicionales.ComprobacionesConRetorno();
+
+          //  AsignarLetraVal("La letra de tu valoración es: " + libro.ValoracionesLetras); // B
+
+            Console.ReadLine();
+ 
+        }
+
+        private static void AsignarLetraVal(string descripcion)
+        {
+            Console.WriteLine(descripcion);
         }
 
         private static void EscribirValoraciones(string descripcion, int valoracion) //transformo el decimal a un entero 

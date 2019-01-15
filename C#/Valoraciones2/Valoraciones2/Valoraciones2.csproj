@@ -47,6 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalcularValoraciones.cs" />
+    <Compile Include="EstructurasDeControl\Condicionales.cs" />
+    <Compile Include="EstructurasDeControl\Estados.cs" />
+    <Compile Include="EstructurasDeControl\OperadoresYExpresiones.cs" />
+    <Compile Include="EstructurasDeControl\SwitchCase.cs" />
+    <Compile Include="EstructurasDeControl\Variables.cs" />
     <Compile Include="IdiomaLibro.cs" />
     <Compile Include="LibroValoraciones.cs" />
     <Compile Include="Program.cs" />
