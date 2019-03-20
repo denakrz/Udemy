@@ -1,0 +1,19 @@
+## Ambientes
+
+- Local
+- Dev
+- QA: 
+- UAT: testing con usuarios reales
+- BETA: "usuarios beta" -> arreglo de """todos""" los bugs
+- CANOLY RELEAST: 10% de prod pasa a usuarios, en 90% quedan lo viejo
+- PROD: 
+
+__________________________________________________________________
+
+## Plataformas cloud:
+- AWS
+- Azure
+- GCP
+- Heroku
+- DO
+- Zeit

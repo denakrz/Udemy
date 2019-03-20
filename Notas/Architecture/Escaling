@@ -1,0 +1,7 @@
+Vertical: estado ---> relación 1 a 1 usuario servidor
+mantengo todo igual, solo que es más violento
+por ej: 
+cuando manejas sesiones que autentica en todos los lugares (obsoleto)
+
+Horizontal: no estados
+nada me garantiza que donde entro el primer request va a entrar el segundo

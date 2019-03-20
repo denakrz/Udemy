@@ -1,0 +1,9 @@
+## BDD: Behavior Driven Development 
+
+- Es una evolución del TDD, ayuda a enfocarse en la necesidad del usuario y en el comportamiento del sistema en vez de centrarse al 100% en testear la implementación.
+- Desarrollo con constante comunicación entre DEV, QA y BA.
+- El propósito principal de esta metoldología es que se establezca la comunicación del equipo antes de iniciar el proyecto para comprobar que todos los miembros del equipo entiendan correctamente
+las herramientas a usar.
+- Se usa "Gherkin", es un formato especial para escribir los escenarios (ejemplos). Esto permite implementar
+pruebas automizadas.
+- Basically, favorece la testeabilidad del sistema/comunicación entre el team.

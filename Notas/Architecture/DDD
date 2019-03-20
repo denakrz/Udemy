@@ -1,0 +1,16 @@
+## DDD
+- Testeabilidad, SC, RP, Unit of Work
+- Muy largo para el primer desarrollo, muy bueno para el mantenimiento
+-Es mucho más segregado
+- Todo parte del dominio
+Dominio -> domain services -> app -> UI | INFRA | PERSIS (por fuera)
+- API y CORE separados a otra capa de servicio -> quilombo
+Para conectarse deben pasar por el DTO (reducción del dominio)
+
+      API                 SERVICIOS
+---------------        ---------------       
+-             -        -     APP     -
+-    U I      - ______ -     PER     -
+-   A P I     -  DTO   -     DS      -
+-             -        -    DOMAIN   -
+---------------        ---------------
